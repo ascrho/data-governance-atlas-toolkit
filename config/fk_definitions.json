@@ -1,0 +1,30 @@
+{
+  "foreign_keys": [
+    {
+      "name": "fk_orders_customer",
+      "from_table": "TRX_ORDERS",
+      "from_column": "CUSTOMER_ID",
+      "to_table": "CUSTOMER_MASTER",
+      "to_column": "ID",
+      "description": "Order references the customer who placed it"
+    },
+    {
+      "name": "fk_balance_account",
+      "from_table": "BALANCE_DAILY",
+      "from_column": "ACCOUNT_ID",
+      "to_table": "CUSTOMER_ACCOUNTS",
+      "to_column": "ID",
+      "description": "Daily balance belongs to a customer account"
+    },
+    {
+      "name": "fk_trx_product",
+      "from_table": "TRX_MOVEMENTS",
+      "from_column": "PRODUCT_ID",
+      "to_table": "PROC_PRODUCTS",
+      "to_column": "ID",
+      "description": "Transaction references the product type"
+    }
+  ],
+  "relationship_type": "atlas_foreign_key",
+  "propagate": true
+}

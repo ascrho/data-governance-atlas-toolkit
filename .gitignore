@@ -1,0 +1,6 @@
+config/atlas_config.env
+.env
+__pycache__/
+*.pyc
+.venv/
+*.log

@@ -1,0 +1,57 @@
+{
+  "domain_rules": [
+    {
+      "table_prefix": "CUSTOMER_",
+      "domain": "Customer Management",
+      "labels": ["Customer", "Core"],
+      "pii_candidate": true,
+      "source_system": "Core Banking"
+    },
+    {
+      "table_prefix": "TRX_",
+      "domain": "Transactions",
+      "labels": ["Transaction", "Financial"],
+      "pii_candidate": false,
+      "source_system": "Core Banking"
+    },
+    {
+      "table_prefix": "BALANCE_",
+      "domain": "Financial",
+      "labels": ["Balance", "Financial"],
+      "pii_candidate": false,
+      "source_system": "Data Warehouse"
+    },
+    {
+      "table_prefix": "REG_",
+      "domain": "Regulatory",
+      "labels": ["Compliance", "Regulatory"],
+      "pii_candidate": false,
+      "source_system": "Compliance System"
+    },
+    {
+      "table_prefix": "PROC_",
+      "domain": "Operations",
+      "labels": ["Process", "Operations"],
+      "pii_candidate": false,
+      "source_system": "BPM"
+    },
+    {
+      "table_prefix": "AUDIT_",
+      "domain": "Audit",
+      "labels": ["Audit", "Control"],
+      "pii_candidate": false,
+      "source_system": "Internal Audit"
+    }
+  ],
+  "pii_column_patterns": [
+    "(first|last|full)_?name",
+    "(email|correo)",
+    "(phone|telefono|celular)",
+    "(address|direccion|domicilio)",
+    "(rut|dni|ssn|passport|cedula|national_id)",
+    "(birth|nacimiento)_?date",
+    "(salary|sueldo|remuneracion|income)"
+  ],
+  "default_domain": "General",
+  "default_labels": ["Uncategorized"]
+}
